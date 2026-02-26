@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
             <Link href="/" className="group">
-              <span className="text-2xl font-black tracking-[0.2em] text-slate-900 group-hover:text-blue-600 transition-colors uppercase italic">
+              <span className="text-2xl font-black tracking-[0.15em] text-slate-900 group-hover:text-blue-600 transition-colors uppercase font-display">
                 AUGUSTINOVIĆ
               </span>
             </Link>
@@ -41,7 +41,7 @@ const Navbar = () => {
               <Link 
                 key={link.name} 
                 href={link.href}
-                className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 hover:text-blue-600 transition-colors"
+                className="text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-600 hover:text-blue-600 transition-colors font-sans"
               >
                 {link.name}
               </Link>

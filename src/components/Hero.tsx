@@ -40,12 +40,9 @@ const Hero = () => {
               <ShieldCheck size={14} />
               <span>Kvalitetni Sustavi za Filtraciju Vode</span>
             </div>
-            <h1 className="text-5xl lg:text-[5.5rem] font-black text-slate-900 tracking-tighter leading-[1.1] mb-8 uppercase py-2">
+            <h1 className="text-5xl lg:text-[5.5rem] font-black text-slate-900 tracking-tighter leading-[1.1] mb-8 uppercase py-2 font-display">
               Voda kakvu <br />
-              <span className="relative inline-block pb-2">
-                vaš dom zaslužuje
-                <span className="absolute bottom-0 left-0 w-24 h-2 bg-blue-600 rounded-full"></span>
-              </span>
+              vaš dom zaslužuje
             </h1>
             <p className="text-xl text-slate-500 mb-10 max-w-lg leading-relaxed font-medium italic">
               Profesionalna rješenja za filtraciju i omekšavanje vode. Osigurajte čistu, sigurnu i zdravu vodu za cijelu obitelj.
