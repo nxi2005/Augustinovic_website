@@ -93,7 +93,7 @@ const RemineralizerSection = () => {
           </motion.div>
 
           <div className="relative group">
-            <div className="relative aspect-square rounded-[3.5rem] overflow-hidden bg-white shadow-[0_32px_120px_-16px_rgba(37,99,235,0.3)] border-[12px] border-slate-900 will-change-transform">
+            <div className="relative aspect-square rounded-3xl md:rounded-[3.5rem] overflow-hidden bg-white shadow-[0_32px_120px_-16px_rgba(37,99,235,0.3)] border-4 md:border-8 border-slate-900 will-change-transform">
               <AnimatePresence mode='wait'>
                 <motion.div
                   key={currentSlide}
@@ -108,7 +108,7 @@ const RemineralizerSection = () => {
                     src={remImages[currentSlide]} 
                     alt={`Remineralizator detalj ${currentSlide + 1}`} 
                     fill 
-                    className="object-contain p-12"
+                    className="object-contain p-4 md:p-8"
                     sizes="(max-width: 768px) 100vw, 600px"
                   />
                 </motion.div>

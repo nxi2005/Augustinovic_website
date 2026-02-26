@@ -122,9 +122,9 @@ const ROSection = () => {
             viewport={{ once: true }}
             variants={animationVariants}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative max-w-5xl mx-auto mb-32"
+            className="relative max-w-5xl mx-auto mb-32 px-2 md:px-0"
         >
-            <div className="relative aspect-[16/9] rounded-[4.5rem] overflow-hidden bg-white shadow-[0_64px_128px_-32px_rgba(0,0,0,0.15)] border-[20px] border-slate-100 will-change-transform mb-12 group ring-2 ring-blue-600/10 ring-offset-4 ring-offset-white">
+            <div className="relative aspect-[4/3] md:aspect-[16/9] rounded-3xl md:rounded-[4.5rem] overflow-hidden bg-white shadow-[0_64px_128px_-32px_rgba(0,0,0,0.15)] border-4 md:border-[12px] border-slate-100 will-change-transform mb-12 group ring-2 ring-blue-600/10 ring-offset-4 ring-offset-white">
                 <AnimatePresence mode='wait'>
                     <motion.div
                     key={currentSlide}
@@ -139,7 +139,7 @@ const ROSection = () => {
                         src={galleryImages[currentSlide]} 
                         alt={`RO Sustav detalj ${currentSlide + 1}`} 
                         fill 
-                        className="object-contain p-12"
+                        className="object-contain p-2 md:p-6"
                         sizes="(max-width: 1200px) 100vw, 1000px"
                     />
                     </motion.div>
