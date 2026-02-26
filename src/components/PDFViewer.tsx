@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { ChevronLeft, ChevronRight, Maximize2, Loader2 } from 'lucide-react';
 
@@ -14,13 +14,27 @@ interface PDFViewerProps {
 const PDFViewer = ({ file }: PDFViewerProps) => {
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState(1);
+  const [containerWidth, setContainerWidth] = useState<number>(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth - 32); // subtract padding
+      }
+    };
+
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
 
   function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
     setNumPages(numPages);
   }
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full" ref={containerRef}>
       <div className="flex-1 overflow-auto bg-slate-200 flex justify-center p-4">
         <Document
           file={file}
@@ -35,7 +49,8 @@ const PDFViewer = ({ file }: PDFViewerProps) => {
             pageNumber={pageNumber} 
             renderTextLayer={false} 
             renderAnnotationLayer={false}
-            className="shadow-2xl max-w-full"
+            width={containerWidth}
+            className="shadow-2xl"
           />
         </Document>
       </div>
