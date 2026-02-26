@@ -22,6 +22,7 @@ const Navbar = () => {
     { name: 'Reverzna Osmoza', href: '#ro-sustav' },
     { name: 'Remineralizator', href: '#remineralizator' },
     { name: 'Omekšavanje', href: '#omeksavanje' },
+    { name: 'Kontakt', href: '#kontakt' },
   ];
 
   return (

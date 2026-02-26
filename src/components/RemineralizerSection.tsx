@@ -95,7 +95,7 @@ const RemineralizerSection = () => {
           </motion.div>
 
           <div className="relative group">
-            <div className="relative aspect-square rounded-3xl md:rounded-[3.5rem] overflow-hidden will-change-transform bg-slate-950">
+            <div className="relative aspect-square rounded-3xl md:rounded-[3.5rem] overflow-hidden will-change-transform">
               <AnimatePresence mode='wait'>
                 <motion.div
                   key={currentSlide}
