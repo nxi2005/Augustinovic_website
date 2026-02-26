@@ -125,7 +125,7 @@ const ROSection = () => {
             className="relative max-w-5xl mx-auto mb-32"
         >
             <div className="relative group mb-12">
-                <div className="relative aspect-[4/3] md:aspect-[16/9] rounded-3xl md:rounded-[4rem] overflow-hidden will-change-transform bg-slate-50/50">
+                <div className="relative aspect-[4/3] md:aspect-[16/9] rounded-3xl md:rounded-[4rem] overflow-hidden will-change-transform bg-white">
                     <AnimatePresence mode='wait'>
                         <motion.div
                         key={currentSlide}
@@ -133,18 +133,16 @@ const ROSection = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.98 }}
                         transition={{ duration: 0.6, ease: "circOut" }}
-                        className="absolute inset-0 cursor-pointer p-4 md:p-8"
+                        className="absolute inset-0 cursor-pointer"
                         onClick={() => setActiveGallery({ images: galleryImages, index: currentSlide })}
                         >
-                            <div className="relative w-full h-full rounded-2xl md:rounded-[3rem] overflow-hidden shadow-sm">
-                                <Image 
-                                    src={galleryImages[currentSlide]} 
-                                    alt={`RO Sustav detalj ${currentSlide + 1}`} 
-                                    fill 
-                                    className="object-contain"
-                                    sizes="(max-width: 1200px) 100vw, 1000px"
-                                />
-                            </div>
+                            <Image 
+                                src={galleryImages[currentSlide]} 
+                                alt={`RO Sustav detalj ${currentSlide + 1}`} 
+                                fill 
+                                className="object-contain"
+                                sizes="(max-width: 1200px) 100vw, 1000px"
+                            />
                         </motion.div>
                     </AnimatePresence>
                 </div>

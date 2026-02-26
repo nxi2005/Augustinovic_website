@@ -95,7 +95,7 @@ const RemineralizerSection = () => {
           </motion.div>
 
           <div className="relative group">
-            <div className="relative aspect-square rounded-3xl md:rounded-[3.5rem] overflow-hidden will-change-transform bg-white/5">
+            <div className="relative aspect-square rounded-3xl md:rounded-[3.5rem] overflow-hidden will-change-transform bg-slate-950">
               <AnimatePresence mode='wait'>
                 <motion.div
                   key={currentSlide}
@@ -103,18 +103,16 @@ const RemineralizerSection = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: shouldReduceMotion ? 0 : -40 }}
                   transition={{ duration: 0.5, ease: "circOut" }}
-                  className="absolute inset-0 cursor-pointer p-6 md:p-10"
+                  className="absolute inset-0 cursor-pointer"
                   onClick={() => setActiveGallery({ images: remImages, index: currentSlide })}
                 >
-                  <div className="relative w-full h-full rounded-2xl md:rounded-[3rem] overflow-hidden shadow-sm">
-                    <Image 
-                      src={remImages[currentSlide]} 
-                      alt={`Remineralizator detalj ${currentSlide + 1}`} 
-                      fill 
-                      className="object-contain"
-                      sizes="(max-width: 768px) 100vw, 600px"
-                    />
-                  </div>
+                  <Image 
+                    src={remImages[currentSlide]} 
+                    alt={`Remineralizator detalj ${currentSlide + 1}`} 
+                    fill 
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, 600px"
+                  />
                 </motion.div>
               </AnimatePresence>
             </div>
