@@ -88,20 +88,15 @@ const Hero = () => {
             className="relative cursor-pointer"
             onClick={() => setIsModalOpen(true)}
           >
-            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-[16px] border-white group will-change-transform">
+            <div className="relative z-10 rounded-3xl md:rounded-[4rem] overflow-hidden group will-change-transform">
               <Image 
                 src="/assets/RO/Slika1.jpeg" 
                 alt="RO Sustav" 
                 width={800} 
                 height={600} 
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 priority
               />
-              <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors flex items-center justify-center">
-                <div className="bg-white/95 p-5 rounded-full shadow-2xl opacity-0 group-hover:opacity-100 transition-all transform scale-90 group-hover:scale-100">
-                  <Maximize2 className="text-blue-600" size={24} />
-                </div>
-              </div>
             </div>
             {/* Elegant decorative elements */}
             <div className="absolute -bottom-10 -right-10 w-80 h-80 bg-blue-50 rounded-full -z-10 blur-3xl opacity-60"></div>

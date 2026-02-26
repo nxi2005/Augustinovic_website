@@ -115,77 +115,73 @@ const ROSection = () => {
           </div>
         </motion.div>
 
-        {/* Large Centered Slideshow - Enhanced Visible Border */}
+        {/* Large Centered Slideshow Area */}
         <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={animationVariants}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative max-w-5xl mx-auto mb-32 px-2 md:px-0"
+            className="relative max-w-5xl mx-auto mb-32"
         >
-            <div className="relative aspect-[4/3] md:aspect-[16/9] rounded-3xl md:rounded-[4.5rem] overflow-hidden bg-white shadow-[0_64px_128px_-32px_rgba(0,0,0,0.15)] border-4 md:border-[12px] border-slate-100 will-change-transform mb-12 group ring-2 ring-blue-600/10 ring-offset-4 ring-offset-white">
-                <AnimatePresence mode='wait'>
-                    <motion.div
-                    key={currentSlide}
-                    initial={{ opacity: 0, scale: 1.05 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.6, ease: "circOut" }}
-                    className="absolute inset-0 cursor-pointer"
-                    onClick={() => setActiveGallery({ images: galleryImages, index: currentSlide })}
-                    >
-                    <Image 
-                        src={galleryImages[currentSlide]} 
-                        alt={`RO Sustav detalj ${currentSlide + 1}`} 
-                        fill 
-                        className="object-contain p-2 md:p-6"
-                        sizes="(max-width: 1200px) 100vw, 1000px"
-                    />
-                    </motion.div>
-                </AnimatePresence>
-                
-                {/* HUD Overlay - Expand Button only */}
-                <div className="absolute top-10 right-10 bg-slate-900 p-4 rounded-3xl shadow-2xl z-20 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Maximize2 size={24} className="text-white" />
+            <div className="relative group mb-12">
+                <div className="relative aspect-[4/3] md:aspect-[16/9] rounded-3xl md:rounded-[4rem] overflow-hidden will-change-transform bg-slate-50/50">
+                    <AnimatePresence mode='wait'>
+                        <motion.div
+                        key={currentSlide}
+                        initial={{ opacity: 0, scale: 1.02 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.98 }}
+                        transition={{ duration: 0.6, ease: "circOut" }}
+                        className="absolute inset-0 cursor-pointer p-4 md:p-8"
+                        onClick={() => setActiveGallery({ images: galleryImages, index: currentSlide })}
+                        >
+                            <div className="relative w-full h-full rounded-2xl md:rounded-[3rem] overflow-hidden shadow-sm">
+                                <Image 
+                                    src={galleryImages[currentSlide]} 
+                                    alt={`RO Sustav detalj ${currentSlide + 1}`} 
+                                    fill 
+                                    className="object-contain"
+                                    sizes="(max-width: 1200px) 100vw, 1000px"
+                                />
+                            </div>
+                        </motion.div>
+                    </AnimatePresence>
                 </div>
-            </div>
 
-            {/* Slideshow HUD - Moved Below the image container */}
-            <div className="flex justify-center items-center">
-                <div className="flex items-center space-x-8 bg-slate-50 px-10 py-6 rounded-[3rem] border-2 border-slate-100 shadow-sm transition-all hover:shadow-md">
-                    <button 
-                    onClick={(e) => { e.stopPropagation(); prevSlide(); }}
-                    className="p-3 hover:bg-white rounded-full transition-all text-slate-900 hover:shadow-md group/btn"
-                    aria-label="Prethodna"
-                    >
-                    <ChevronLeft size={28} className="group-hover/btn:-translate-x-1 transition-transform" />
-                    </button>
-                    
-                    <div className="flex flex-col items-center min-w-[120px]">
-                        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-2">Galerija RO</span>
-                        <div className="text-2xl font-black tracking-tighter text-slate-900 italic">
-                            {currentSlide + 1} <span className="text-slate-200 mx-1">/</span> {galleryImages.length}
+                {/* Slideshow HUD */}
+                <div className="flex justify-center items-center">
+                    <div className="flex items-center space-x-8 bg-white px-10 py-6 rounded-full border border-slate-100 shadow-sm transition-all hover:shadow-md">
+                        <button 
+                        onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+                        className="p-3 hover:bg-slate-50 rounded-full transition-all text-slate-900 group/btn"
+                        aria-label="Prethodna"
+                        >
+                        <ChevronLeft size={28} className="group-hover/btn:-translate-x-1 transition-transform" />
+                        </button>
+                        
+                        <div className="flex flex-col items-center min-w-[120px]">
+                            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-2">Galerija RO</span>
+                            <div className="text-2xl font-black tracking-tighter text-slate-900 italic">
+                                {currentSlide + 1} <span className="text-slate-200 mx-1">/</span> {galleryImages.length}
+                            </div>
                         </div>
-                    </div>
 
-                    <button 
-                    onClick={(e) => { e.stopPropagation(); nextSlide(); }}
-                    className="p-3 hover:bg-white rounded-full transition-all text-slate-900 hover:shadow-md group/btn"
-                    aria-label="Sljedeća"
-                    >
-                    <ChevronRight size={28} className="group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
+                        <button 
+                        onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+                        className="p-3 hover:bg-slate-50 rounded-full transition-all text-slate-900 group/btn"
+                        aria-label="Sljedeća"
+                        >
+                        <ChevronRight size={28} className="group-hover/btn:translate-x-1 transition-transform" />
+                        </button>
+                    </div>
                 </div>
             </div>
-            
-            {/* Background decorative spread */}
-            <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-blue-50/30 rounded-full blur-[100px] pointer-events-none"></div>
         </motion.div>
 
         {/* Video & More Info */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 rounded-[3.5rem] overflow-hidden bg-slate-900 shadow-2xl relative aspect-video border-[12px] border-white">
+          <div className="lg:col-span-2 rounded-[3rem] md:rounded-[4rem] overflow-hidden bg-slate-900 shadow-2xl relative aspect-video">
             <video 
               controls 
               className="w-full h-full object-cover"

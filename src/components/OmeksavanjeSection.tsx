@@ -132,7 +132,7 @@ const OmeksavanjeSection = () => {
           <h4 className="text-2xl font-black text-slate-900 mb-8 uppercase tracking-tighter">
             Pogledajte sustav u radu
           </h4>
-          <div className="rounded-[3rem] overflow-hidden shadow-2xl bg-slate-900 aspect-video relative group border-[12px] border-white">
+          <div className="rounded-[3rem] overflow-hidden shadow-2xl bg-slate-900 aspect-video relative group">
             {videoInView ? (
               <video 
                 controls 

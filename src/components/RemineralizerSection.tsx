@@ -56,8 +56,10 @@ const RemineralizerSection = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest mb-8 border border-blue-500/20">
-              <Droplet size={14} />
-              <span>Senzacionalan Dodatak Sustavu</span>
+              <div className="flex items-center space-x-2">
+                <Droplet size={14} />
+                <span>Senzacionalan Dodatak Sustavu</span>
+              </div>
             </div>
             <h2 className="text-4xl lg:text-5xl font-black mb-8 leading-none tracking-tighter uppercase">
               Vratite vodi <br />
@@ -93,7 +95,7 @@ const RemineralizerSection = () => {
           </motion.div>
 
           <div className="relative group">
-            <div className="relative aspect-square rounded-3xl md:rounded-[3.5rem] overflow-hidden bg-white shadow-[0_32px_120px_-16px_rgba(37,99,235,0.3)] border-4 md:border-8 border-slate-900 will-change-transform">
+            <div className="relative aspect-square rounded-3xl md:rounded-[3.5rem] overflow-hidden will-change-transform bg-white/5">
               <AnimatePresence mode='wait'>
                 <motion.div
                   key={currentSlide}
@@ -101,42 +103,41 @@ const RemineralizerSection = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: shouldReduceMotion ? 0 : -40 }}
                   transition={{ duration: 0.5, ease: "circOut" }}
-                  className="absolute inset-0 cursor-pointer"
+                  className="absolute inset-0 cursor-pointer p-6 md:p-10"
                   onClick={() => setActiveGallery({ images: remImages, index: currentSlide })}
                 >
-                  <Image 
-                    src={remImages[currentSlide]} 
-                    alt={`Remineralizator detalj ${currentSlide + 1}`} 
-                    fill 
-                    className="object-contain p-4 md:p-8"
-                    sizes="(max-width: 768px) 100vw, 600px"
-                  />
+                  <div className="relative w-full h-full rounded-2xl md:rounded-[3rem] overflow-hidden shadow-sm">
+                    <Image 
+                      src={remImages[currentSlide]} 
+                      alt={`Remineralizator detalj ${currentSlide + 1}`} 
+                      fill 
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 600px"
+                    />
+                  </div>
                 </motion.div>
               </AnimatePresence>
-              
-              <div className="absolute top-8 right-8 bg-blue-600 p-4 rounded-3xl shadow-2xl z-20">
-                <Maximize2 size={24} className="text-white" />
-              </div>
+            </div>
 
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center space-x-4 bg-slate-900/80 backdrop-blur px-6 py-4 rounded-full border border-white/10 z-20">
-                <button 
-                  onClick={(e) => { e.stopPropagation(); prevSlide(); }}
-                  className="p-2 hover:bg-white/10 rounded-full transition-colors text-white"
-                  aria-label="Prethodna"
-                >
-                  <ChevronLeft size={20} />
-                </button>
-                <div className="text-xs font-bold uppercase tracking-widest min-w-[60px] text-center">
-                  {currentSlide + 1} / {remImages.length}
-                </div>
-                <button 
-                  onClick={(e) => { e.stopPropagation(); nextSlide(); }}
-                  className="p-2 hover:bg-white/10 rounded-full transition-colors text-white"
-                  aria-label="Sljedeća"
-                >
-                  <ChevronRight size={20} />
-                </button>
+            {/* Navigation buttons */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 flex items-center space-x-4 bg-slate-900 shadow-2xl px-6 py-4 rounded-full border border-white/10 z-30">
+              <button 
+                onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+                className="p-2 hover:bg-white/10 rounded-full transition-colors text-white"
+                aria-label="Prethodna"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <div className="text-xs font-bold uppercase tracking-widest min-w-[60px] text-center text-white">
+                {currentSlide + 1} / {remImages.length}
               </div>
+              <button 
+                onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+                className="p-2 hover:bg-white/10 rounded-full transition-colors text-white"
+                aria-label="Sljedeća"
+              >
+                <ChevronRight size={20} />
+              </button>
             </div>
             
             {/* Decorative background circle */}
