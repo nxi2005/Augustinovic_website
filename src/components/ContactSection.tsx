@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
 
@@ -53,11 +54,14 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                <div className="mt-16 pt-12 border-t border-white/5">
-                  <div className="group">
-                    <span className="text-2xl font-black tracking-[0.2em] text-white transition-colors uppercase italic">
-                      AUGUSTINOVIĆ
-                    </span>
+                <div className="mt-16 pt-12 border-t border-white/5 !bg-transparent !border-none !shadow-none">
+                  <div className="flex items-center !bg-transparent !border-none !shadow-none">
+                    <img
+                      src="/logo/logo.png"
+                      alt="Augustinović Logo"
+                      className="block w-full max-w-[140px] h-auto !bg-transparent !border-none !shadow-none"
+                      style={{ background: 'transparent', border: 'none', boxShadow: 'none' }}
+                    />
                   </div>
                   <p className="text-slate-500 text-[10px] font-black uppercase tracking-widest mt-2">Vrhunska tehnologija filtracije vode</p>
                 </div>

@@ -1,0 +1,85 @@
+You are a senior frontend engineer and UI/UX designer.
+
+I have a logo in SVG format located at `/public/logo.svg`.
+
+Current problem:
+The logo is appearing on the website with unwanted background styling, containers, or visual artifacts that make it look unprofessional. The SVG has a transparent background and should render cleanly on the page, but the current implementation makes it look like it has a background or box around it.
+
+Your task:
+Refactor the implementation of the logo across the entire website so it looks clean, professional, and properly integrated into the design.
+
+Requirements:
+
+1. Preserve SVG transparency
+   The SVG must display with its natural transparency. Do NOT add:
+
+* background colors
+* gradient backgrounds
+* borders
+* drop shadows
+* filters
+* colored containers behind the logo
+
+2. Clean HTML usage
+   Use the SVG like this:
+
+<img src="/logo.svg" alt="Company Logo" class="site-logo">
+
+Do not embed unnecessary wrappers that change its appearance.
+
+3. Professional placement
+   Use the same logo consistently in:
+
+* Navbar (top left)
+* Hero section brand area
+* Footer
+* Mobile navigation
+
+4. Responsive sizing
+   Use professional sizing rules:
+
+Navbar:
+height: 42–52px
+
+Hero section:
+height: 80–120px
+
+Footer:
+height: 35–45px
+
+Maintain aspect ratio at all times.
+
+5. CSS implementation
+
+Create a reusable class:
+
+.site-logo {
+height: auto;
+max-height: 50px;
+width: auto;
+object-fit: contain;
+display: block;
+}
+
+Ensure:
+
+* no background
+* no padding that creates visual boxes
+* no filters
+* no color overlays
+
+6. Container rules
+   The logo should sit naturally on the page background. Any container holding the logo must have:
+
+background: transparent;
+
+7. Consistency
+   Create a reusable component or shared class so the logo appears identical everywhere on the site.
+
+8. Clean modern UI
+   The logo should look like it belongs to a modern SaaS or premium technology website.
+
+Goal:
+The SVG logo must render perfectly crisp, transparent, and professional across all pages without any visible background artifacts.
+
+Audit all CSS affecting the logo and remove any background, filter, or container styling that modifies the appearance of /logo.svg.”
