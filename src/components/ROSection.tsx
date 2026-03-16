@@ -46,7 +46,7 @@ const ROSection = () => {
   };
 
   return (
-    <section id="ro-sustav" className="py-24 bg-white overflow-hidden">
+    <section id="ro-sustav" className="py-24 bg-white overflow-hidden scroll-mt-24">
       <ImageModal 
         images={activeGallery?.images}
         initialIndex={activeGallery?.index}

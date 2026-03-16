@@ -7,7 +7,7 @@ import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
 
 const ContactSection = () => {
   return (
-    <section id="kontakt" className="py-24 bg-white">
+    <section id="kontakt" className="py-24 bg-white scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-950 rounded-[3rem] overflow-hidden shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-2">

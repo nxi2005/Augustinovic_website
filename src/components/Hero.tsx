@@ -16,7 +16,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-white">
+    <section className="relative pt-36 pb-16 lg:pt-48 lg:pb-24 overflow-hidden bg-white">
       <ImageModal 
         src={isModalOpen ? "/assets/RO/Slika1.jpeg" : null} 
         alt="RO Sustav" 

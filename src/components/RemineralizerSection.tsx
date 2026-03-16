@@ -34,7 +34,7 @@ const RemineralizerSection = () => {
   };
 
   return (
-    <section id="remineralizator" className="py-24 bg-slate-950 text-white overflow-hidden relative">
+    <section id="remineralizator" className="py-24 bg-slate-950 text-white overflow-hidden relative scroll-mt-24">
       <ImageModal 
         images={activeGallery?.images}
         initialIndex={activeGallery?.index}

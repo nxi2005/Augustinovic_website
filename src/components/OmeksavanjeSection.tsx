@@ -42,7 +42,7 @@ const OmeksavanjeSection = () => {
   };
 
   return (
-    <section id="omeksavanje" className="py-24 bg-slate-50 overflow-hidden">
+    <section id="omeksavanje" className="py-24 bg-slate-50 overflow-hidden scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start mb-24">
           <motion.div
