@@ -11,7 +11,7 @@ const Footer = () => {
             <Link href="/" className="group mb-4 flex items-center !bg-transparent !border-none !shadow-none outline-none">
               <img
                 src="/logo/logo.png"
-                alt="Augustinović Logo"
+                alt="Aqua Purificata Logo"
                 className="block w-full max-w-[150px] h-auto !bg-transparent !border-none !shadow-none"
                 style={{ background: 'transparent', border: 'none', boxShadow: 'none' }}
               />
@@ -21,7 +21,7 @@ const Footer = () => {
             </p>
             <div className="h-0.5 w-12 bg-blue-600/30 mb-8"></div>
             <p className="text-slate-400 text-[9px] font-semibold uppercase tracking-[0.4em] font-sans">
-              © {new Date().getFullYear()} Augustinović. Sva prava pridržana.
+              © {new Date().getFullYear()} Aqua Purificata. Sva prava pridržana.
             </p>
           </div>
 

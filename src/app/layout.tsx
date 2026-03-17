@@ -10,7 +10,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Augustinović - Kvalitetni Sustavi za Filtraciju Vode",
+  title: "Aqua Purificata - Kvalitetni Sustavi za Filtraciju Vode",
   description: "Profesionalna rješenja za filtraciju i omekšavanje vode. Osigurajte čistu, sigurnu i zdravu vodu za cijelu obitelj.",
 };
 

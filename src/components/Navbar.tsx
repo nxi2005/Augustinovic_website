@@ -33,7 +33,7 @@ const Navbar = () => {
             <Link href="/" className="group flex items-center !bg-transparent !border-none !shadow-none outline-none">
               <img
                 src="/logo/logo.png"
-                alt="Augustinović Logo"
+                alt="Aqua Purificata Logo"
                 className="block w-full max-w-[140px] h-auto !bg-transparent !border-none !shadow-none"
                 style={{ background: 'transparent', border: 'none', boxShadow: 'none' }}
               />

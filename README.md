@@ -1,6 +1,6 @@
-# Augustinović - Kvalitetni Sustavi za Filtraciju Vode
+# Aqua Purificata - Kvalitetni Sustavi za Filtraciju Vode
 
-Profesionalna rješenja za filtraciju i omekšavanje vode. Ovaj projekt je moderna Next.js aplikacija koja služi kao landing stranica za **Augustinović** usluge.
+Profesionalna rješenja za filtraciju i omekšavanje vode. Ovaj projekt je moderna Next.js aplikacija koja služi kao landing stranica za **Aqua Purificata** usluge.
 
 ## 🚀 Tehnologije
 
@@ -36,4 +36,4 @@ Profesionalna rješenja za filtraciju i omekšavanje vode. Ovaj projekt je moder
 
 ## 📄 Licenca
 
-© {new Date().getFullYear()} Augustinović. Sva prava pridržana.
+© {new Date().getFullYear()} Aqua Purificata. Sva prava pridržana.
