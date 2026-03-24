@@ -11,7 +11,17 @@ const RemineralizerSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const shouldReduceMotion = useReducedMotion();
 
-  const remImages = Array.from({ length: 16 }, (_, i) => `/assets/remineralizator/rem_slika${i + 1}.jpeg`);
+  const remImages = [
+    "/assets/remineralizator/rem_slika17.jpeg",
+    "/assets/remineralizator/rem_slika15.jpeg",
+    "/assets/remineralizator/rem_slika16.jpeg",
+    "/assets/remineralizator/rem_slika14.jpeg",
+    "/assets/remineralizator/rem_slika2.jpeg",
+    "/assets/remineralizator/rem_slika11.jpeg",
+    "/assets/remineralizator/rem_slika12.jpeg",
+    "/assets/remineralizator/rem_slika13.jpeg",
+    "/assets/remineralizator/rem_slika6.jpeg"
+  ];
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % remImages.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + remImages.length) % remImages.length);
@@ -20,7 +30,7 @@ const RemineralizerSection = () => {
     if (shouldReduceMotion) return;
     const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
-  }, [shouldReduceMotion]);
+  }, [shouldReduceMotion, remImages.length]);
 
   const benefits = [
     { title: "Poboljšava okus vode", desc: "Vraća kalcij i magnezij za svježiji i prirodniji okus." },
@@ -118,7 +128,7 @@ const RemineralizerSection = () => {
             </div>
 
             {/* Navigation buttons */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 flex items-center space-x-4 bg-slate-900 shadow-2xl px-6 py-4 rounded-full border border-white/10 z-30">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[120%] flex items-center space-x-4 bg-slate-900 shadow-2xl px-6 py-4 rounded-full border border-white/10 z-30">
               <button 
                 onClick={(e) => { e.stopPropagation(); prevSlide(); }}
                 className="p-2 hover:bg-white/10 rounded-full transition-colors text-white"
